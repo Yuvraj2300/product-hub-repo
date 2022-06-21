@@ -1,5 +1,11 @@
 package com.hub.product.model;
 
-public class ProductResponse {
+import lombok.Builder;
+import lombok.Data;
 
+@Data
+@Builder
+public class ProductResponse {
+	private String id;
+	private Product product;
 }
