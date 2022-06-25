@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- Copied from defaults.xml in spring-boot-x.y.z.jar -->
+	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+	<conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+
+
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%clr(${PID:- }){magenta} %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr([%-5level]) %clr(---){faint} %clr([%15.15thread]){faint}  %clr(%-40.40logger{39}){cyan} %clr(:){faint} %msg%n%wEx</pattern>
+		</encoder>
+	</appender>
+
+
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${user.home}/product-hub-logs/product-hub-app/product-hub-app.log</file>
+		<append>true</append>
+		<immediateFlush>true</immediateFlush>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${user.home}/product-hub-logs/product-hub-app/product-hub-app-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>10MB</maxFileSize>    
+			<maxHistory>30</maxHistory>
+       		<totalSizeCap>500MB</totalSizeCap>
+    	</rollingPolicy>
+		<encoder>
+			<pattern>%d{[yyyy-MM-dd HH:mm:ss.SSS]} %5level ${PID:- } --- [%thread] %-40.40logger{39} : %m%n%wEx</pattern>
+		</encoder>
+	</appender>
+
+
+
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+
+	<logger name="com.jio.exchange" level="trace" />
+
+</configuration>
