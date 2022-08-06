@@ -9,6 +9,7 @@
 
 	<modules>
 		<module>product-hub</module>
+		<module>product-hub-config</module>
 	</modules>
 
 	<name>Spring Boot Blank Project (from https://github.com/making/spring-boot-blank)</name>
