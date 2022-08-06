@@ -1,5 +1,7 @@
 package com.hub.product.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +24,7 @@ public class ProductController {
 	 *           of some query params as per their requirements
 	 */
 	@PostMapping(path = "/products", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ProductResponse getProduct(@RequestBody ProductRequest request) {
+	public ProductResponse getProduct(@RequestBody @Valid ProductRequest request) {
 		return null;
 	}
 
