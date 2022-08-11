@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -19,8 +20,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ProductHubKafkaProducerConfig {
 
+	@Value("${product.hub.kafka.host}")
 	private String kafkaHostAddress;
 
+	@Value("${product.hub.kafka.port}")
 	private int kafkaPort;
 
 	private String kafkaCompleteAddress;

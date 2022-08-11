@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.KafkaAdmin;
@@ -16,8 +17,10 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 @Slf4j
 public class ProductHubKafkaTopicConfig {
+	@Value("${product.hub.kafka.host}")
 	private String kafkaHostAddress;
 
+	@Value("${product.hub.kafka.port}")
 	private int kafkaPort;
 
 	private String kafkaCompleteAddress;

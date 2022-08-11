@@ -1,8 +1,6 @@
 package com.hub.product.config;
 
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
+//@Configuration
 public class ProductHubJMSConfig {
 	//	@Value("${provider.amqp.host}")
 	private String amqpHost;
