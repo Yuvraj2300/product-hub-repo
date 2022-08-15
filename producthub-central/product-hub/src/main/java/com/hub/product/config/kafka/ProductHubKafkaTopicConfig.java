@@ -46,6 +46,6 @@ public class ProductHubKafkaTopicConfig {
 
 	@Bean
 	public NewTopic topic1() {
-		return new NewTopic("baeldung", 1, (short) 1);
+		return new NewTopic("product_request", 1, (short) 1);
 	}
 }
