@@ -1,5 +1,11 @@
 package com.hub.product.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,10 +19,15 @@ import lombok.Data;
 
 @Data
 @Builder
+@Entity
 public class Product {
-	private String id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String name;
 	private String description;
-	private Merchant merchant;
 	private double price;
+
+	@ManyToOne
+	private Merchant merchant;
 }
