@@ -95,7 +95,7 @@
 				<version>3.0.0-M4</version>
 				<configuration>
 					<username>test</username>
-					<password>fd3d4s2mlawb6xnvaymbci5zicc4utlbzthlsepdrxfjpz7ytetq</password>
+					<password>pwd</password>
 				</configuration>
 		</plugin>
 		-->
